@@ -5,12 +5,33 @@ import { annotate } from 'rough-notation'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-
+import circle from '../assets/icon-gradient-circle.svg'
+import triangle from '../assets/icon-gradient-triangle (1).svg'
+import square from '../assets/icon-gradient-square.svg'
 export default function Hero() {
   const navigate = useNavigate()
   const textRef = useRef<HTMLSpanElement>(null)
   const highlightRef = useRef<HTMLSpanElement>(null)
-
+  const items = [
+    { 
+        icon: square, 
+        title: 'Make Work Easier', 
+        description: 'Now you can cut of searching time of GOOD repo',
+        buttonText: 'Find Out More'
+    },
+    { 
+        icon: circle,
+        title: 'Multi-language Support', 
+        description: 'We Currently Support TypeScript, Javascript, C++, Python and Go.',
+        buttonText: 'Get Details'
+    },
+    { 
+        icon: triangle,
+        title: "Special Feature's", 
+        description: 'We Show Repository which is Highly Active ,  1k+ Stars, 500+ forks and much more.  ',
+        buttonText: 'Learn more'
+    }
+];
   useEffect(() => {
     if (textRef.current) {
       const annotation = annotate(textRef.current, {
@@ -42,14 +63,14 @@ export default function Hero() {
         <div className="text-center">
           {/* Main heading with animated highlight */}
           <h1 className="text-3xl font-bold font-anzo tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            <span className="block mb-2 sm:mb-3 md:mb-4">Your Gateway to</span>
+            <span className="block text-xl sm:text-4xl mb-2 sm:mb-3  -ml-5 md:mb-4">Your Gateway to</span>
             <span className="block text-black mb-2 sm:mb-3 relative" ref={textRef}>
               Open Source
             </span>
           </h1>
 
           {/* Subheading with animated underline */}
-          <p className="font-anzo mx-auto mt-4 sm:mt-6 max-w-md text-base sm:text-lg md:text-xl md:mt-8 md:max-w-3xl text-gray-600">
+          <p className="font-anzo mx-auto mt-4 -ml-7 sm:ml-[20%] sm:mt-6 max-w-md text-base sm:text-lg md:text-xl md:mt-8 md:max-w-3xl text-gray-600">
             Discover, contribute, and grow with open source. Find your project in just
             <span ref={highlightRef} className="font-semibold"> one click</span>.
           </p>
@@ -65,7 +86,16 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
           </div>
-
+          <div className="flex flex-col -ml-3 md:flex-row justify-between mt-20 gap-6">
+                        {items.map((item, index) => (
+                            <div key={index} className="w-full md:w-1/3 p-4 bg-black bg-opacity-25 flex flex-col justify-center items-center mb-4 md:mb-0">
+                                <img src={item.icon} alt="" width={30} height={30} className="mb-4"/>
+                                <h1 className="font-anzo text-lg font-bold">{item.title}</h1>
+                                <p className="font-anzo font-normal text-xs md:text-sm mt-2">{item.description}</p>
+                               
+                            </div>
+                        ))}
+                    </div>
    
           </div>
         </div>

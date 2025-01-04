@@ -31,17 +31,17 @@ export default function SpecificHeader() {
   return (
     <>
       <div className="h-20 flex font-anzo border-b-2 border-black">
-        <div className="text-black font-anzo text-3xl flex items-center ml-5 cursor-pointer" onClick={()=>navigate('/')}>
+        <div className="text-black font-anzo  text-lg sm:text-3xl ml-2 flex items-center sm:ml-5 cursor-pointer" onClick={()=>navigate('/')}>
           OpenLang
         </div>
-        <div className="flex justify-end ml-[78%] gap-10 items-center">
+        <div className="flex justify-end ml-[40%] text-sm sm:text-2xl sm:ml-[80%] gap-10 items-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="bg-black text-white text-md rounded-full hover:bg-white hover:text-black"
+                className="bg-black text-white text-xs sm:text-lg rounded-full hover:bg-white hover:text-black"
               >
-                Explore More
+                Explore 
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 mt-4 mr-2 rounded-xl bg-gray-800 text-white font-anzo">
