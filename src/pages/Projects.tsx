@@ -1,80 +1,90 @@
-import { useState } from 'react';
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Search, Code, Star, GitFork } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
-const categories = [
-  { id: 'typescript', name: 'TypeScript' },
-  { id: 'javascript', name: 'JavaScript' },
-  { id: 'c', name: 'C' },
-  { id: 'python', name: 'Python' },
-  { id: 'go', name: 'Go' },
-];
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {  Code } from 'lucide-react';
+import axios from 'axios';
+import SpecificHeader from '@/components/SpecificHeader';
+
+
+interface IssueType {
+  id: string;
+  title: string;
+  url: string;
+  description: string;
+}
+
+interface RepoType {
+  id: string;
+  languages: string;
+  forks: number;
+  name: string;
+  recentPRs: string[];
+  starts: number;
+  updatedAt: Date;
+  url: string;
+  recentIssues: IssueType[];
+}
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [repo, setRepo] = useState<RepoType[]>([]);
+
+  const fetchRepos = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/api/active-repos');
+      setRepo(response.data);
+    } catch (error) {
+      console.error("Failed to fetch repositories:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRepos();
+  }, []);
 
   return (
+    <>
+    
+  <SpecificHeader/>
     <div className="flex flex-col md:flex-row min-h-screen bg-white">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-black p-6 text-white">
-        <h2 className="text-2xl font-bold mb-6">Categories</h2>
-        <div className="space-y-2">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              variant={selectedCategory === category.id ? "secondary" : "ghost"}
-              className={`w-full rounded-full justify-start text-left hover:bg-white  ${
-                selectedCategory === category.id ? 'bg-white text-black' : 'text-white hover:bg-gray-800'
-              }`} 
-              onClick={() => setSelectedCategory(category.id)}
-            >
-              {category.name}
-            </Button>
-          ))}
-        </div>
-      </aside>
+     
 
-      {/* Main content */}
+      {/* Main Content */}
       <main className="flex-1 p-6 bg-white">
-        <h1 className="text-4xl font-bold mb-8 text-black">Buzzing Repos</h1>
-        
-        {/* Search bar */}
-        <div className="mb-8">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <Input 
-              type="search" 
-              placeholder="Search repositories..." 
-              className="pl-10 pr-4 py-2 w-full border-black focus:ring-black focus:border-black"
-            />
-          </div>
-        </div>
+        <h1 className="text-4xl font-anzo text-center font-bold mb-8 text-black">
+          Buzzing Repos
+        </h1>
 
-        {/* Repository grid */}
+        {/* Search bar */}
+  
+
+        {/* Repository Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {[...Array(6)].map((_, index) => (
-            <Card key={index} className="border-2 border-black">
+          {repo.map((repos) => (
+            <Card key={repos.id} className="border-2 border-black hover:shadow-lg">
               <CardHeader className="border-b border-black">
                 <CardTitle className="flex items-center space-x-2 text-black">
                   <Code className="h-5 w-5" />
-                  <span>Repository {index + 1}</span>
+                  <span>{repos.name}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
-                <p className="text-sm text-gray-600 mb-4">
-                  This is a sample description for Repository {index + 1}. It showcases the project's main features and goals.
-                </p>
-                <div className="flex items-center space-x-4 text-sm text-gray-600">
-                  <span className="flex items-center">
-                    <Star className="h-4 w-4 mr-1" />
-                    {Math.floor(Math.random() * 1000)}
-                  </span>
-                  <span className="flex items-center">
-                    <GitFork className="h-4 w-4 mr-1" />
-                    {Math.floor(Math.random() * 100)}
-                  </span>
+                <div className="text-sm text-gray-600 space-y-2">
+                  <p><strong>Forks:</strong> {repos.forks}</p>
+                  <p><strong>Stars:</strong> {repos.starts}</p>
+                  <p><strong>Languages:</strong> {repos.languages}</p>
+                  <p>
+                    <strong>URL:</strong>{" "}
+                    <a
+                      href={repos.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline"
+                    >
+                      {repos.url}
+                    </a>
+                  </p>
+                  <p><strong>Last Updated:</strong> {new Date(repos.updatedAt).toLocaleDateString()}</p>
                 </div>
               </CardContent>
             </Card>
@@ -82,6 +92,6 @@ export default function Projects() {
         </div>
       </main>
     </div>
+    </>
   );
 }
-
