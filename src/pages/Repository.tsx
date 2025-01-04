@@ -3,8 +3,7 @@ import SpecificHeader from "@/components/SpecificHeader"
 import { useParams } from "react-router-dom"
  import { useEffect, useState } from "react"
  import axios from "axios"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, Code, GitFork, Globe, Star } from "lucide-react"
+import { Calendar, GitFork, Globe, Star } from "lucide-react"
 interface IssueType {
     id: string;
     title: string;
@@ -28,7 +27,7 @@ export default function Repository(){
     const [repo, setRepo] = useState<RepoType[]>([])
     const fetchrepo = async()=>{
         try {
-            const response =  await axios.get(`http://localhost:3001/api/repo/${language}`)
+            const response =  await axios.get(`https://openlang-backend.onrender.com/api/repo/${language}`)
     setRepo(response.data)
     console.log(response.data)
         } catch (error) {
@@ -47,37 +46,7 @@ export default function Repository(){
         <h1 className="text-xl capitalize -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
           {language} Repositories 
         </h1>
-        {/* <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {repo.map((repos) => (
-            <Card key={repos.id} className="border-2 border-black hover:shadow-lg">
-              <CardHeader className="border-b border-black">
-                <CardTitle className="flex items-center space-x-2 text-black">
-                  <Code className="h-5 w-5" />
-                  <span>{repos.name}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-4">
-                <div className="text-sm text-gray-600 space-y-2">
-                  <p><strong>Forks:</strong> {repos.forks}</p>
-                  <p><strong>Stars:</strong> {repos.stars}</p>
-                 
-                  <p>
-                    <strong>URL:</strong>{" "}
-                    <a
-                      href={repos.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 underline"
-                    >
-                      {repos.url}
-                    </a>
-                  </p>
-                  <p><strong>Last Updated:</strong> {new Date(repos.updatedAt).toLocaleDateString()}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div> */}
+       
 <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
           {repo.map((repos) => (
             <div key={repos.id} className="sm:w-full -ml-32 sm:ml-5 gap-3 mt-3  sm:max-w-[280px] h-auto border-2 font-anzo border-black rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
