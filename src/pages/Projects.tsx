@@ -1,5 +1,5 @@
 'use client'
-
+import img from '../assets/10.webp'
 import { useEffect, useState } from 'react';
 import { Code, Star, GitFork, Globe, Calendar } from 'lucide-react';
 import axios from 'axios';
@@ -46,11 +46,11 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-black text-white ">
       <SpecificHeader />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-xl  -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
-          🚀 Buzzing Repos
+        <h1 className="text-xl text-gray-300 -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
+           Buzzing Repos
         </h1>
 
         {isLoading && (
@@ -61,55 +61,62 @@ export default function Projects() {
           <p className="text-center text-red-600">{error}</p>
         )}
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
-          {repos.map((repo) => (
-            <div key={repo.id} className="sm:w-full -ml-32 sm:ml-5 gap-3 mt-3  sm:max-w-[280px] h-auto border-2 font-anzo border-black rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
-              {/* Header */}
-              <div className="text-center capitalize p-2 sm:p-3 border-b-2 font-anzo text-lg sm:text-xl border-black truncate">
+       <div className="grid  sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+{
+  repos.map((repo)=>(
+<div className=' w-[315px] h-[315px] border shadow-inner bg-white/40 backdrop-blur-lg bg-cover bg-center border-gray-300 rounded-2xl hover:border-[#39ff14] '  style={{
+    clipPath: 'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)', backgroundImage:'url("https://intent-js.ramx.in/_next/image?url=%2Ffeature%2F10.png&w=384&q=75")'
+  }}>
+    <div className="text-center capitalize p-2 sm:p-3  font-anzo text-lg sm:text-xl border-black truncate">
                 {repo.name}
               </div>
-
+    <div className='text-center mt- h-2/3  backdrop-blur-lg  ' // Semi-transparent background
+  >
               <div className="p-3 space-y-2">
                 {/* Stars */}
-                <div className="flex items-center">
-                  <Star className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">{repo.stars} stars</span>
+                <div className="flex items-center ">
+                  <Star className="h-6 w-6 mt-4 ml-2 mr-4 flex-shrink-0" />
+                  <span className="text-lg mt-3  font-anzo">{repo.stars} Stars</span>
                 </div>
 
                 {/* Forks */}
                 <div className="flex items-center">
-                  <GitFork className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">{repo.forks} forks</span>
+                  <GitFork className="h-6 w-6  mr-4 ml-2 mt-4 flex-shrink-0" />
+                  <span className="text-lg mt-3 font-anzo"> {repo.forks} Forks</span>
                 </div>
 
                 {/* Languages */}
                 <div className="flex items-center">
-                  <Code className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm truncate">{repo.languages}</span>
+                  <Code className="h-6 w-6 mr-4 mt-4 ml-2  flex-shrink-0" />
+                  <span className="text-lg truncate mt-3 font-anzo">{repo.languages}</span>
                 </div>
 
                 {/* Updated Date */}
                 <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">Updated on {new Date(repo.updatedAt).toLocaleDateString()}</span>
+                  <Calendar className="h-6 w-6 mr-4 ml-2 mt-4 flex-shrink-0" />
+                  <span className="text-lg mt-3 font-anzo">Updated on {new Date(repo.updatedAt).toLocaleDateString()} </span>
                 </div>
               </div>
-
-              {/* Footer Section */}
-              <div className="border-t-2 border-black flex justify-center items-center p-2 sm:p-3">
-                <Globe className="h-4 w-4 mr-1.5 flex-shrink-0" />
+              <div className="border-t border-[#39ff14] flex justify-end mr-5 ml-5 items-end  sm:py-4">
+                <Globe className="h-6 w-6 mr-1.5   flex-shrink-0 text-[#39ff14] " />
                 <a
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline font-anzo text-center text-sm sm:text-base truncate"
+                  className="hover:underline font-anzo text-center text-[#39ff14] mr-6 text-xl sm:text-base truncate"
                 >
                   View Repository
                 </a>
               </div>
-            </div>
-          ))}
-        </div>
+           
+
+    </div>
+    
+  </div>
+
+  ))
+}
+  </div>
       </main>
     </div>
   );

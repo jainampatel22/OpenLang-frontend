@@ -5,6 +5,10 @@ export default {
 
   theme: {
   	extend: {
+		spacing: {
+			radius: '15px',
+			blur: '15px',
+		  },
   		fontFamily: {
   			anzo: [
   				'anzo1'

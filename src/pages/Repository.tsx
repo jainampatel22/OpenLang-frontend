@@ -39,63 +39,71 @@ export default function Repository(){
        },[language])
       return (
         <>
-       
+        <div className="bg-black text-white">       
         <SpecificHeader/>
-        <div className="flex flex-col md:flex-row min-h-screen bg-white">
-        <main className="flex-1 p-6 bg-white">
+        <div className="flex flex-col md:flex-row min-h-screen ">
+        <main className="flex-1 p-6 ">
         <h1 className="text-xl capitalize -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
           {language} Repositories 
         </h1>
        
-<div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
-          {repo.map((repos) => (
-            <div key={repos.id} className="sm:w-full -ml-32 sm:ml-5 gap-3 mt-3  sm:max-w-[280px] h-auto border-2 font-anzo border-black rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
-              {/* Header */}
-              <div className="text-center capitalize p-2 sm:p-3 border-b-2 font-anzo text-lg sm:text-xl border-black truncate">
-                {repos.name}
+        <div className="grid  sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+{
+  repo.map((repo)=>(
+<div className=' w-[290px] h-[290px] border shadow-lg bg-white/40 backdrop-blur-lg bg-cover bg-center border-gray-300 hover:border-[#39ff14] rounded-2xl  '  style={{
+    clipPath: 'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)', backgroundImage:'url("https://intent-js.ramx.in/_next/image?url=%2Ffeature%2F10.png&w=384&q=75")'
+  }}>
+    <div className="text-center capitalize p-2 sm:p-3  font-anzo text-lg sm:text-xl border-black truncate">
+                {repo.name}
               </div>
-
+    <div className='text-center mt- h-2/3  backdrop-blur-lg  ' // Semi-transparent background
+  >
               <div className="p-3 space-y-2">
                 {/* Stars */}
-                <div className="flex items-center">
-                  <Star className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">{repos.stars} stars</span>
+                <div className="flex items-center ">
+                  <Star className="h-6 w-6 mt-5 ml-2 mr-4 flex-shrink-0" />
+                  <span className="text-lg mt-3  font-anzo">{repo.stars} Stars</span>
                 </div>
 
                 {/* Forks */}
                 <div className="flex items-center">
-                  <GitFork className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">{repos.forks} forks</span>
+                  <GitFork className="h-6 w-6  mr-4 ml-2 mt-7 flex-shrink-0" />
+                  <span className="text-lg mt-3 font-anzo"> {repo.forks} Forks</span>
                 </div>
 
-                {/* Languages */}
 
-
+               
                 {/* Updated Date */}
                 <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1.5 flex-shrink-0" />
-                  <span className="text-sm">Updated on {new Date(repos.updatedAt).toLocaleDateString()}</span>
+                  <Calendar className="h-6 w-6 mr-4 ml-2 mt-7 flex-shrink-0" />
+                  <span className="text-lg mt-3 font-anzo">Updated on {new Date(repo.updatedAt).toLocaleDateString()} </span>
                 </div>
               </div>
-
-              {/* Footer Section */}
-              <div className="border-t-2 border-black flex justify-center items-center p-2 sm:p-3">
-                <Globe className="h-4 w-4 mr-1.5 flex-shrink-0" />
+              <div className="border-t border-[#39ff14] flex justify-end mr-5 ml-5 items-end  sm:py-4">
+                <Globe className="h-6 w-6 mr-1.5   flex-shrink-0 text-[#39ff14] " />
                 <a
-                  href={repos.url}
+                  href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline font-anzo text-center text-sm sm:text-base truncate"
+                  className="hover:underline font-anzo text-center -mt-4 text-[#39ff14] mr-6 text-xl sm:text-base truncate"
                 >
                   View Repository
                 </a>
               </div>
-            </div>
-          ))}
-        </div>
+           
+
+    </div>
+    
+  </div>
+
+  ))
+}
+  </div>
       </main>
   
    </div>
+   </div>
+
         </>
     )
 }
