@@ -15,7 +15,7 @@ function App() {
 <BrowserRouter>
 <Routes>
 
-  <Route path='/projects' element={<Projects/>}/>
+  <Route path='/repos' element={<Projects/>}/>
   <Route path="/repos/:language" element={<Repository />} />
 <Route path='/' element={<HomeTest/>}/>
 </Routes>

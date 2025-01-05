@@ -84,7 +84,7 @@ useEffect(()=>{
 
 <div className='text-white font-anzo text-lg -ml-7  mb-5  -mt-24'>
 <div className="z-10 flex min-h-64 items-center justify-center">
-      <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/projects')}>
+      <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/repos')}>
         <span className="whitespace-pre-wrap text-center z-20 text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
          Get Started
         </span>

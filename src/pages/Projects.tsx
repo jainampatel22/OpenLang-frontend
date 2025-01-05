@@ -1,5 +1,4 @@
 'use client'
-import img from '../assets/10.webp'
 import { useEffect, useState } from 'react';
 import { Code, Star, GitFork, Globe, Calendar } from 'lucide-react';
 import axios from 'axios';
