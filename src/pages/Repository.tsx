@@ -47,7 +47,7 @@ export default function Repository(){
           {language} Repositories 
         </h1>
        
-        <div className="grid  sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+        <div className="grid gap-6 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
 {
   repo.map((repo)=>(
 <div className=' w-[290px] h-[290px] border shadow-lg bg-white/40 backdrop-blur-lg bg-cover bg-center border-gray-300 hover:border-[#39ff14] rounded-2xl  '  style={{

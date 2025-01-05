@@ -60,7 +60,7 @@ export default function Projects() {
           <p className="text-center text-red-600">{error}</p>
         )}
 
-       <div className="grid  sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+       <div className="grid gap-6 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
 {
   repos.map((repo)=>(
 <div className=' w-[315px] h-[315px] border shadow-inner bg-white/40 backdrop-blur-lg bg-cover bg-center border-gray-300 rounded-2xl hover:border-[#39ff14] '  style={{
