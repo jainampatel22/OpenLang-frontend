@@ -64,14 +64,14 @@ useEffect(()=>{
 
     <div className="w-full mt-4 sm:mt-8 md:mt-14 text-center text-white py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
       {/* Main Heading */}
-      <h1 className="font-serif -ml-20 mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
+      <h1 className="font-serif -ml-16 mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
         Your Gateway to
       </h1>
       
       {/* Subheading with Flex */}
       <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 mt-4 sm:mt-6">
         {/* "OPENSOURCE" Heading */}
-        <h1 className="font-TThovesMedium -mt-2 ml-7 mb-2  text-4xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
+        <h1 className="font-serif -mt-2 ml-9 mb-2  text-4xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
           OPENSOURCE
         </h1>
         
