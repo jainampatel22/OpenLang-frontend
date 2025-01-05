@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom'
 import Projects from './pages/Projects'
 import Repository from './pages/Repository'
 import HomeTest from './components/Hero'
-
+import { Analytics } from "@vercel/analytics/react"
 function App() {
 
 
