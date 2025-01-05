@@ -95,7 +95,7 @@ useEffect(()=>{
 </div>
 <div className="relative">
       {/* Video Background Section */}
-      <div className="video-container relative -mt-[120%] sm:-mt-24 md:-mt-36">
+      <div className="video-container relative -mt-[100%] sm:-mt-24 md:-mt-36">
         <video
           src={video}
           autoPlay
@@ -105,7 +105,7 @@ useEffect(()=>{
         ></video>
       </div>
 
-      <div className="bg-black mt-28 sm:-mt-32 md:-mt-64 text-white min-h-screen z-10 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+      <div className="bg-black mt-10 sm:-mt-32 md:-mt-64 text-white min-h-screen z-10 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className='text-center mb-8 sm:mb-12'>
           <h1 className='font-TThovesMedium text-3xl sm:text-4xl md:text-5xl text-center capitalize'>
             What makes us unique
