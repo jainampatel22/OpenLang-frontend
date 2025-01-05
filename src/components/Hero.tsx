@@ -9,8 +9,6 @@ import circle from '../assets/icon-gradient-circle.svg'
 import triangle from '../assets/icon-gradient-triangle (1).svg'
 import square from '../assets/icon-gradient-square.svg'
 
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-
 export default function HomeTest(){
   const navigate =useNavigate()
   const items = [
