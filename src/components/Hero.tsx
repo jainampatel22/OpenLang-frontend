@@ -57,32 +57,32 @@ useEffect(()=>{
        <div>
   <div className="bg-black min-h-screen w-full flex flex-col items-center">
     {/* Header Section */}
-    <div className="w-full flex items-center justify-center gap-1 text-white font-TThoves text-2xl  -ml-20 py-4">
+    <div className="w-full flex items-center justify-center gap-1 text-white font-serif text-2xl  -ml-20 py-4">
       <img src={logo} alt="Logo" className="h-10" />
       <h1 className=" sm:-mt-2 ">OpenLang</h1>
     </div>
 
     <div className="w-full mt-4 sm:mt-8 md:mt-14 text-center text-white py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
       {/* Main Heading */}
-      <h1 className="font-TThovesMedium -ml-20 mt-8 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
+      <h1 className="font-serif -ml-20 mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
         Your Gateway to
       </h1>
       
       {/* Subheading with Flex */}
       <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 mt-4 sm:mt-6">
         {/* "OPENSOURCE" Heading */}
-        <h1 className="font-TThovesMedium -mt-2 ml-10 mb-2  text-5xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
+        <h1 className="font-TThovesMedium -mt-2 ml-7 mb-2  text-4xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
           OPENSOURCE
         </h1>
         
         {/* Supporting Text */}
-        <span className="text-center -ml-1 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
+        <span className="text-center -ml-12 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
           Find repositories that are highly active, <br className="hidden sm:inline" /> have <strong>1000+ stars</strong>, and <strong>500+ forks</strong>.
         </span>
       </div>
     </div>
 
-<div className='text-white font-anzo text-lg   -mt-28'>
+<div className='text-white font-anzo text-lg -ml-7   -mt-24'>
 <div className="z-10 flex min-h-64 items-center justify-center">
       <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/projects')}>
         <span className="whitespace-pre-wrap text-center z-20 text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -107,7 +107,7 @@ useEffect(()=>{
 
       <div className="bg-black mt-10 sm:-mt-32 md:-mt-64 text-white min-h-screen z-10 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className='text-center mb-8 sm:mb-12'>
-          <h1 className='font-TThovesMedium text-3xl sm:text-4xl md:text-5xl text-center capitalize'>
+          <h1 className='font-serif -ml-7 text-2xl sm:text-4xl md:text-5xl text-center capitalize'>
             What makes us unique
           </h1>
         </div>
@@ -119,7 +119,7 @@ useEffect(()=>{
               className="w-full p-4 border-2 border-gray-200 rounded-2xl bg-black bg-opacity-25 flex flex-col justify-center items-center"
             >
               <img src={item.icon} alt="" width={80} height={80} className="mb-4" />
-              <h2 className="font-EditorialU text-xl sm:text-2xl mt-4 sm:mt-6">{item.title}</h2>
+              <h2 className="font-serif text-xl sm:text-2xl mt-4 sm:mt-6">{item.title}</h2>
               <p className="font-anzo font-normal text-xs sm:text-sm mt-2 text-center">{item.description}</p>
             </div>
           ))}
