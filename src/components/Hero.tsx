@@ -76,7 +76,7 @@ useEffect(()=>{
         </h1>
         
         {/* Supporting Text */}
-        <span className="text-center -ml-12 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
+        <span className="text-center -ml-9 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
           Find repositories that are highly active, <br className="hidden sm:inline" /> have <strong>1000+ stars</strong>, and <strong>500+ forks</strong>.
         </span>
       </div>
