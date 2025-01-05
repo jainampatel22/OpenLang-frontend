@@ -5,6 +5,30 @@
 
   
       }
+      @font-face {
+        font-family: 'EditorialNewUltralight';
+        src: url('/fonts/EditorialNew-ultralight.woff2') format('woff2');
+      
+        
+            }
+            @font-face {
+              font-family: 'TThoves';
+              src: url('/fonts/TThoves.woff2') format('woff2');
+            
+              
+                  }
+                  @font-face {
+                    font-family: 'EditorialNewRegular';
+                    src: url('/fonts/EditorialNew-regular.woff2') format('woff2');
+                  
+                    
+                        } 
+                        @font-face {
+                          font-family: 'TThovesMedium';
+                          src: url('/fonts/TThoves-medium.woff2') format('woff2');
+                        
+                          
+                              }                 
 
 @tailwind base;
 @tailwind components;

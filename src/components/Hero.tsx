@@ -1,17 +1,18 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
-import { annotate } from 'rough-notation'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import logo from '../assets/Screenshot (80).png'
+import ShimmerButton from './ui/shimmer-button'
+import video from '../assets/F1_1.mp4'
+import gsap from 'gsap'
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import circle from '../assets/icon-gradient-circle.svg'
 import triangle from '../assets/icon-gradient-triangle (1).svg'
 import square from '../assets/icon-gradient-square.svg'
-export default function Hero() {
-  const navigate = useNavigate()
-  const textRef = useRef<HTMLSpanElement>(null)
-  const highlightRef = useRef<HTMLSpanElement>(null)
+
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+
+export default function HomeTest(){
+  const navigate =useNavigate()
   const items = [
     { 
         icon: square, 
@@ -32,75 +33,105 @@ export default function Hero() {
         buttonText: 'Learn more'
     }
 ];
-  useEffect(() => {
-    if (textRef.current) {
-      const annotation = annotate(textRef.current, {
-        type: 'circle',
-        color: 'rgba(0, 0, 0, 0.2)',
-        strokeWidth: 3,
-        animationDuration: 1500,
-      })
-      annotation.show()
+useEffect(()=>{
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.fromTo(
+    ".video", // Select the video by className
+    {
+      scale: 1, // Initial scale
+    },
+    {
+      scale: 2, // Final scale when scrolled into view
+      scrollTrigger: {
+        trigger: ".video-container", // Trigger element (the container)
+        start: "top center", // When the top of the video container hits the center of the viewport
+        end: "bottom top", // When the bottom of the video container hits the top of the viewport
+        scrub: 1, // Smoothens the animation
+        markers: false, // Disable markers for debugging
+      },
     }
+  );
+},[])
 
-    if (highlightRef.current) {
-      const annotation = annotate(highlightRef.current, {
-        type: 'underline',
-        color: '#000000',
-        strokeWidth: 2,
-        animationDuration: 1000,
-      })
-      annotation.show()
-    }
-  }, [])
 
-  return (
-    <div className="relative min-h-screen overflow-hidden bg-white">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/www/public/grid.svg')] bg-center opacity-10 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] animate-pulse"></div>
+    return (
+        <>
+       <div>
+  <div className="bg-black min-h-screen w-full flex flex-col items-center">
+    {/* Header Section */}
+    <div className="w-full flex items-center justify-center gap-1 text-white font-TThoves text-2xl  -ml-20 py-4">
+      <img src={logo} alt="Logo" className="h-10" />
+      <h1 className=" sm:-mt-2 ">OpenLang</h1>
+    </div>
+
+    <div className="w-full mt-4 sm:mt-8 md:mt-14 text-center text-white py-4 sm:py-6 px-4 sm:px-6 lg:px-8">
+      {/* Main Heading */}
+      <h1 className="font-TThovesMedium -ml-20 mt-8 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
+        Your Gateway to
+      </h1>
       
-      <div className="relative mx-auto max-w-7xl px-4 pt-12 pb-16 sm:px-6 sm:pt-20 sm:pb-24 lg:px-8 lg:pt-32">
-        <div className="text-center">
-          {/* Main heading with animated highlight */}
-          <h1 className="text-3xl font-bold font-anzo tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            <span className="block text-xl sm:text-4xl mb-2 sm:mb-3  -ml-5 md:mb-4">Your Gateway to</span>
-            <span className="block text-black mb-2 sm:mb-3 relative" ref={textRef}>
-              Open Source
-            </span>
+      {/* Subheading with Flex */}
+      <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 mt-4 sm:mt-6">
+        {/* "OPENSOURCE" Heading */}
+        <h1 className="font-TThovesMedium -mt-2 ml-10 mb-2  text-5xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
+          OPENSOURCE
+        </h1>
+        
+        {/* Supporting Text */}
+        <span className="text-center -ml-1 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
+          Find repositories that are highly active, <br className="hidden sm:inline" /> have <strong>1000+ stars</strong>, and <strong>500+ forks</strong>.
+        </span>
+      </div>
+    </div>
+
+<div className='text-white font-anzo text-lg   -mt-28'>
+<div className="z-10 flex min-h-64 items-center justify-center">
+      <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/projects')}>
+        <span className="whitespace-pre-wrap text-center z-20 text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+         Get Started
+        </span>
+      </ShimmerButton>
+    </div>
+ </div>
+ 
+</div>
+<div className="relative">
+      {/* Video Background Section */}
+      <div className="video-container relative -mt-[120%] sm:-mt-24 md:-mt-36">
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          className="video w-full object-cover"
+        ></video>
+      </div>
+
+      <div className="bg-black mt-28 sm:-mt-32 md:-mt-64 text-white min-h-screen z-10 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+        <div className='text-center mb-8 sm:mb-12'>
+          <h1 className='font-TThovesMedium text-3xl sm:text-4xl md:text-5xl text-center capitalize'>
+            What makes us unique
           </h1>
-
-          {/* Subheading with animated underline */}
-          <p className="font-anzo mx-auto mt-4 -ml-7 sm:ml-[20%] sm:mt-6 max-w-md text-base sm:text-lg md:text-xl md:mt-8 md:max-w-3xl text-gray-600">
-            Discover, contribute, and grow with open source. Find your project in just
-            <span ref={highlightRef} className="font-semibold"> one click</span>.
-          </p>
-
-          {/* CTA button */}
-          <div className="mx-auto mt-6 sm:mt-8 flex justify-center px-4 sm:px-0">
-            <Button 
-              size="lg" 
-              className="rounded-full h-10 sm:h-11 text-base sm:text-lg font-anzo hover:text-black hover:bg-white bg-black text-white"
-              onClick={() => navigate('/projects')}
-            >
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
-          </div>
-          <div className="flex flex-col -ml-3 md:flex-row justify-between mt-20 gap-6">
-                        {items.map((item, index) => (
-                            <div key={index} className="w-full md:w-1/3 p-4 bg-black bg-opacity-25 flex flex-col justify-center items-center mb-4 md:mb-0">
-                                <img src={item.icon} alt="" width={30} height={30} className="mb-4"/>
-                                <h1 className="font-anzo text-lg font-bold">{item.title}</h1>
-                                <p className="font-anzo font-normal text-xs md:text-sm mt-2">{item.description}</p>
-                               
-                            </div>
-                        ))}
-                    </div>
+        </div>
    
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+          {items.map((item, index) => (
+            <div 
+              key={index} 
+              className="w-full p-4 border-2 border-gray-200 rounded-2xl bg-black bg-opacity-25 flex flex-col justify-center items-center"
+            >
+              <img src={item.icon} alt="" width={80} height={80} className="mb-4" />
+              <h2 className="font-EditorialU text-xl sm:text-2xl mt-4 sm:mt-6">{item.title}</h2>
+              <p className="font-anzo font-normal text-xs sm:text-sm mt-2 text-center">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
-   
-  )
-}
+    </div>
 
+</div>
+
+
+        </>
+    )
+}
