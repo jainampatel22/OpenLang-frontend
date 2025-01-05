@@ -31,7 +31,7 @@ export default function SpecificHeader() {
   return (
     <>
       <div className="h-20 flex font-anzo border-b-2 border-black">
-        <div className="text-black font-anzo  text-lg sm:text-3xl ml-2 flex items-center sm:ml-5 cursor-pointer" onClick={()=>navigate('/')}>
+        <div className="text-white font-anzo  text-lg sm:text-3xl ml-2 flex items-center sm:ml-5 cursor-pointer" onClick={()=>navigate('/')}>
           OpenLang
         </div>
         <div className="flex justify-end ml-[40%] text-sm sm:text-2xl sm:ml-[80%] gap-10 items-center">

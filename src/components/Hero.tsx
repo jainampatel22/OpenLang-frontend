@@ -57,7 +57,7 @@ useEffect(()=>{
        <div>
   <div className="bg-black min-h-screen w-full flex flex-col items-center">
     {/* Header Section */}
-    <div className="w-full flex items-center justify-center gap-1 text-white font-serif text-2xl  -ml-20 py-4">
+    <div className="w-full flex items-center justify-center gap-1 text-white font-serif text-2xl  -ml-10 py-4">
       <img src={logo} alt="Logo" className="h-10" />
       <h1 className=" sm:-mt-2 ">OpenLang</h1>
     </div>
@@ -76,13 +76,13 @@ useEffect(()=>{
         </h1>
         
         {/* Supporting Text */}
-        <span className="text-center -ml-9 sm:text-left font-anzo text-xs sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
+        <span className="text-center -ml-5 sm:text-left font-anzo text-sm sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
           Find repositories that are highly active, <br className="hidden sm:inline" /> have <strong>1000+ stars</strong>, and <strong>500+ forks</strong>.
         </span>
       </div>
     </div>
 
-<div className='text-white font-anzo text-lg -ml-7   -mt-24'>
+<div className='text-white font-anzo text-lg -ml-7  mb-5  -mt-24'>
 <div className="z-10 flex min-h-64 items-center justify-center">
       <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/projects')}>
         <span className="whitespace-pre-wrap text-center z-20 text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
