@@ -52,6 +52,12 @@ export default function Repository(){
         <h1 className="text-xl capitalize -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
           {language} Repositories 
         </h1>
+        {error && (
+            <p className="text-center text-red-600">{error}</p>
+       
+        )}
+       
+       
        {
         isLoading && (
           <div className="grid gap-6 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
