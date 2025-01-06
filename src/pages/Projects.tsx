@@ -53,7 +53,34 @@ export default function Projects() {
         </h1>
 
         {isLoading && (
-          <p className="text-center text-gray-600">Loading repositories...</p>
+          <p className="text-center text-gray-600">{isLoading && (
+            <div className="grid gap-6 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center">
+              {[...Array(6)].map((_, idx) => ( // Generate 6 skeleton cards
+                <div
+                  key={idx}
+                  className="w-[315px] h-[315px] border shadow-inner bg-white/10 backdrop-blur-lg border-gray-300 rounded-2xl animate-pulse"
+                  style={{
+                    clipPath:
+                      'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)',
+                  }}
+                >
+                  {/* Name Skeleton */}
+                  <div className="h-8 bg-gray-400/30 rounded w-3/4 mx-auto my-4"></div>
+          
+                  {/* Placeholder for details */}
+                  <div className="p-4 space-y-3">
+                    <div className="h-6 bg-gray-400/30 rounded w-1/2 mx-auto"></div>
+                    <div className="h-6 bg-gray-400/30 rounded w-2/3 mx-auto"></div>
+                    <div className="h-6 bg-gray-400/30 rounded w-1/3 mx-auto"></div>
+                  </div>
+          
+                  {/* Footer skeleton */}
+                  <div className="h-6 bg-gray-400/30 rounded w-1/3 mx-auto mt-6"></div>
+                </div>
+              ))}
+            </div>
+          )}
+          </p>
         )}
 
         {error && (
