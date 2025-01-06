@@ -15,7 +15,7 @@ export default function HomeTest(){
     { 
         icon: square, 
         title: 'Make Work Easier', 
-        description: 'Now you can cut of searching time of GOOD repo',
+        description: 'Now you can cut of searching time of GOOD Repository to contribute !',
         buttonText: 'Find Out More'
     },
     { 
@@ -31,7 +31,7 @@ export default function HomeTest(){
         buttonText: 'Learn more'
     },
     { 
-      icon: triangle,
+      icon: square,
       title: "Upcoming Feature's", 
       description: 'We are working on bringing GSOC organisations repository and small feature such as Bookmark repository.',
       buttonText: 'Learn more'
