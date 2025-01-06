@@ -79,7 +79,7 @@ export default function Repository(){
                   <span className="text-lg mt-3 font-anzo">Updated on {new Date(repo.updatedAt).toLocaleDateString()} </span>
                 </div>
               </div>
-              <div className="border-t border-[#39ff14] flex justify-end mr-5 ml-5 items-end  sm:py-4">
+              <div className="border-t border-[#39ff14] flex justify-end mr-5 ml-5 py-4 items-end   sm:py-4">
                 <Globe className="h-6 w-6 mr-1.5   flex-shrink-0 text-[#39ff14] " />
                 <a
                   href={repo.url}
