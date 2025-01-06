@@ -49,7 +49,7 @@ export default function Projects() {
       <SpecificHeader />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-xl text-gray-300 -ml-  sm:text-3xl md:text-4xl font-mono sm:text-center font-bold mb-8 sm:mb-12">
-           Buzzing Repos
+           Buzzing Repositories
         </h1>
 
         {isLoading && (
@@ -93,7 +93,7 @@ export default function Projects() {
 <div className=' w-[315px] h-[315px] border shadow-inner bg-white/40 backdrop-blur-lg bg-cover bg-center border-gray-300 rounded-2xl hover:border-[#39ff14] '  style={{
     clipPath: 'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)', backgroundImage:'url("https://intent-js.ramx.in/_next/image?url=%2Ffeature%2F10.png&w=384&q=75")'
   }}>
-    <div className="text-center capitalize p-2 sm:p-3  font-anzo text-lg sm:text-xl border-black truncate">
+    <div className="text-center capitalize p-2 sm:p-3 text-[#39ff14]  font-anzo text-lg sm:text-xl border-black truncate">
                 {repo.name}
               </div>
     <div className='text-center mt- h-2/3  backdrop-blur-lg  ' // Semi-transparent background

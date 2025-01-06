@@ -29,7 +29,13 @@ export default function HomeTest(){
         title: "Special Feature's", 
         description: 'We Show Repository which is Highly Active ,  1k+ Stars, 500+ forks and much more.  ',
         buttonText: 'Learn more'
-    }
+    },
+    { 
+      icon: triangle,
+      title: "Upcoming Feature's", 
+      description: 'We are working on bringing GSOC organisations repository and small feature such as Bookmark repository.',
+      buttonText: 'Learn more'
+  }
 ];
 useEffect(()=>{
   gsap.registerPlugin(ScrollTrigger)
@@ -56,7 +62,7 @@ useEffect(()=>{
         <>
        <div>
   <div className="bg-black min-h-screen w-full flex flex-col items-center">
-    {/* Header Section */}
+
     <div className="w-full flex items-center justify-center gap-1 text-white font-serif text-2xl  -ml-10 py-4">
       <img src={logo} alt="Logo" className="h-10" />
       <h1 className=" sm:-mt-2 ">OpenLang</h1>
@@ -71,18 +77,18 @@ useEffect(()=>{
       {/* Subheading with Flex */}
       <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 mt-4 sm:mt-6">
         {/* "OPENSOURCE" Heading */}
-        <h1 className="font-serif -mt-2 ml-9 mb-2  text-4xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
+        <h1 className="font-serif -mt-2 ml-11 mb-2  text-4xl sm:-ml-52 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter">
           OPENSOURCE
         </h1>
         
         {/* Supporting Text */}
-        <span className="text-center -ml-5 sm:text-left font-anzo text-sm sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
+        <span className="text-center -ml-2 sm:text-left font-anzo text-sm sm:text-sm leading-relaxed sm:translate-y-4 md:translate-y-7 max-w-xs sm:max-w-sm md:max-w-md">
           Find repositories that are highly active, <br className="hidden sm:inline" /> have <strong>1000+ stars</strong>, and <strong>500+ forks</strong>.
         </span>
       </div>
     </div>
 
-<div className='text-white font-anzo text-lg -ml-7  mb-5  -mt-24'>
+<div className='text-white font-anzo text-lg -ml-3  mb-5  -mt-24'>
 <div className="z-10 flex min-h-64 items-center justify-center">
       <ShimmerButton className="shadow-2xl" onClick={()=>navigate('/repos')}>
         <span className="whitespace-pre-wrap text-center z-20 text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
@@ -106,13 +112,13 @@ useEffect(()=>{
       </div>
 
       <div className="bg-black mt-10 sm:-mt-32 md:-mt-64 text-white min-h-screen z-10 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-        <div className='text-center mb-8 sm:mb-12'>
+        <div className='text-center mb-16 sm:mb-12'>
           <h1 className='font-serif -ml-7 text-2xl sm:text-4xl md:text-5xl text-center capitalize'>
             What makes us unique
           </h1>
         </div>
    
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {items.map((item, index) => (
             <div 
               key={index} 
