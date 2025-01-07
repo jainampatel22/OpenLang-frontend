@@ -17,6 +17,7 @@ const languageUrls = {
   Cpp: "/repos/cpp",
   Python: "/repos/python",
   Go: "/repos/go",
+  Issues:"/issues"
 } as const;
 
 type Language = keyof typeof languageUrls;
@@ -37,7 +38,9 @@ export default function SpecificHeader() {
         <img src={logo} alt="Logo" className="h-10" />
          <h1 className="-mt-2 gap-1">OpenLang</h1>
         </div>
-        <div className="hidden sm:flex justify-center ml-[47%] cursor-pointer text-xl gap-10 items-center  ">
+        <div className="hidden sm:flex justify-center ml-[40%] cursor-pointer text-xl gap-10 items-center  ">
+        <div className={`${activeCategory === 'Issues' ? 'border-b border-[#39ff14]' : ''}`} onClick={() => handleLanguageSelect('Issues')}>Issues</div>
+
 <div className={`${activeCategory === 'TypeScript' ? 'border-b border-[#39ff14]' : ''}`} onClick={() => handleLanguageSelect('TypeScript')} >Typescript</div>
 <div className={`${activeCategory === 'JavaScript' ? 'border-b border-[#39ff14]' : ''}`}  onClick={() => handleLanguageSelect('JavaScript')}>Javascript</div>
 
@@ -62,6 +65,11 @@ export default function SpecificHeader() {
                 Select Repositories
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
+              <DropdownMenuCheckboxItem >
+              <div className={`${activeCategory === 'Issues' ? 'border-b border-[#39ff14]' : ''}`}  onClick={() => handleLanguageSelect('Issues')} >Issues</div>
+
+              </DropdownMenuCheckboxItem>
+           
               <DropdownMenuCheckboxItem onClick={() => handleLanguageSelect('TypeScript')}>
               <div className={`${activeCategory === 'TypeScript' ? 'border-b border-[#39ff14]' : ''}`} >Typescript</div>
 

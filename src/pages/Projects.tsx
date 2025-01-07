@@ -28,6 +28,7 @@ export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  
   const fetchRepos = async () => {
     try {
       const response = await axios.get('https://openlang-backend.onrender.com/api/active-repos');

@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import Projects from './pages/Projects'
 import Repository from './pages/Repository'
 import HomeTest from './components/Hero'
+import OpenSource from './pages/OpenSource'
 function App() {
 
 
@@ -18,6 +19,7 @@ function App() {
   <Route path='/repos' element={<Projects/>}/>
   <Route path="/repos/:language" element={<Repository />} />
 <Route path='/' element={<HomeTest/>}/>
+<Route path='/issues' element={<OpenSource/>}/>
 </Routes>
 </BrowserRouter>
 </>
