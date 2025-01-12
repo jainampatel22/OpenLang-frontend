@@ -29,7 +29,7 @@ export default function Repository(){
     const [error, setError] = useState<string | null>(null);
     const fetchrepo = async()=>{
         try {
-            const response =  await axios.get(`https://openlang-backend.onrender.com/api/repo/${language}`)
+            const response =  await axios.get(`https://openlang-backend-pcy1.onrender.com/api/repo/${language}`)
     setRepo(response.data)
     console.log(response.data)
         } catch (error) {

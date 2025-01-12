@@ -31,7 +31,7 @@ export default function Projects() {
   
   const fetchRepos = async () => {
     try {
-      const response = await axios.get('https://openlang-backend.onrender.com/api/active-repos');
+      const response = await axios.get('https://openlang-backend-pcy1.onrender.com/api/active-repos');
       setRepos(response.data);
     } catch (error) {
       setError('Failed to fetch repositories');

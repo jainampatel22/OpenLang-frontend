@@ -14,7 +14,7 @@ const fetchissues = async()=>{
 const response =await axios.get('https://openlang-backend-pcy1.onrender.com/api/active-issues')
 
 if (Array.isArray(response.data.items)) {
-    setIssue(response.data.items); // Use the `items` array
+    setIssue(response.data.items); 
   
   } else {
     console.error("Unexpected response format:", response.data);
