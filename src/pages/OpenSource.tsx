@@ -11,7 +11,7 @@ created_at:Date;
 export default function OpenSource(){
     const [issue, setIssue] = useState<issueType[]>([])
 const fetchissues = async()=>{
-const response =await axios.get('https://openlang-backend.onrender.com/api/active-issues')
+const response =await axios.get('https://openlang-backend-pcy1.onrender.com/api/active-issues')
 
 if (Array.isArray(response.data.items)) {
     setIssue(response.data.items); // Use the `items` array
